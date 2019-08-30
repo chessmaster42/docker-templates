@@ -44,4 +44,4 @@
     <Config Type="Variable" Name="USERNAME_REGEX" Target="USERNAME_REGEX" Default="^[a-z][a-zA-Z0-9._-]{3,32}$" Mode="" Description="The regular expression used to ensure a username (and group name) is valid." Display="always" Required="false" Mask="false"></Config>
     <Config Type="Variable" Name="LOGIN_TIMEOUT_MINS" Target="LOGIN_TIMEOUT_MINS" Default="10" Mode="" Description="How long before an idle session will be timed out." Display="always" Required="false" Mask="false"></Config>
     <Config Type="Variable" Name="SITE_NAME" Target="SITE_NAME" Default="LDAP User Manager" Mode="" Description="Change this to replace the title in the menu. e.g. 'My Company'" Display="always" Required="false" Mask="false"></Config>
-</Containers>
+</Container>
