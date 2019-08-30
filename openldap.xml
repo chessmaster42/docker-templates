@@ -53,4 +53,4 @@
     <Config Type="Variable" Name="LDAP_SSL_HELPER_PREFIX" Target="LDAP_SSL_HELPER_PREFIX" Default="ldap" Mode="" Description="ssl-helper environment variables prefix. Defaults to ldap, ssl-helper first search config from LDAP_SSL_HELPER_* variables, before SSL_HELPER_* variables." Display="always" Required="false" Mask="false"></Config>
     <Config Type="Variable" Name="HOSTNAME" Target="HOSTNAME" Default="" Mode="" Description="Set the hostname of the running openldap server. Defaults to whatever docker creates." Display="always" Required="false" Mask="false"></Config>
     <Config Type="Variable" Name="DISABLE_CHOWN" Target="DISABLE_CHOWN" Default="false" Mode="" Description="Do not perform any chown to fix file ownership. Defaults to false." Display="always" Required="false" Mask="false"></Config>
-</Containers>
+</Container>
