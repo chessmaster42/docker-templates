@@ -20,11 +20,13 @@
                 <HostPort>2080</HostPort>
                 <ContainerPort>80</ContainerPort>
                 <Protocol>tcp</Protocol>
+                <Description>Test description</Description>
             </Port>
             <Port>
                 <HostPort>2443</HostPort>
                 <ContainerPort>443</ContainerPort>
                 <Protocol>tcp</Protocol>
+                <Description>Another description</Description>
             </Port>
         </Publish>
     </Networking>
@@ -95,8 +97,6 @@
             <Mode/>
         </Variable>
     </Environment>
-    <Config Name="Host Port 1" Target="80" Default="2080" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">2080</Config>
-    <Config Name="Host Port 2" Target="443" Default="2443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="false" Mask="false">2443</Config>
     <WebUI>http://[IP]:[PORT:2443]/</WebUI>
     <DonateText></DonateText>
     <DonateLink></DonateLink>
