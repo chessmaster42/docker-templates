@@ -1,32 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Containers>
-    <TemplateURL>https://github.com/chessmaster42/docker-templates/blob/master/ldap-account-manager.xml</TemplateURL>
-    <Icon>https://raw.githubusercontent.com/chessmaster42/docker-templates/master/img/ldap-account-manager.jpg</Icon>
+<Container version="2">
     <Beta>False</Beta>
     <Category>Network:Other</Category>
-    <Name>ldap-account-manager</Name>
-    <Description> LDAP Account Manager (LAM) is a webfrontend for managing entries (e.g. users, groups, DHCP settings) stored in an LDAP directory. LAM was designed to make LDAP management as easy as possible for the user. It abstracts from the technical details of LDAP and allows persons without technical background to manage LDAP entries. If needed, power users may still directly edit LDAP entries via the integrated LDAP browser</Description>
-    <Overview> LDAP Account Manager (LAM) is a webfrontend for managing entries (e.g. users, groups, DHCP settings) stored in an LDAP directory. LAM was designed to make LDAP management as easy as possible for the user.</Overview>
-    <Support>https://hub.docker.com/r/ldapaccountmanager/lam</Support>
-    <Registry>https://hub.docker.com/r/ldapaccountmanager/lam/~/dockerfile/</Registry>
-    <GitHub>https://github.com/LDAPAccountManager/lam</GitHub>
-    <Repository>ldapaccountmanager/lam</Repository>
-    <Project>https://www.ldap-account-manager.org</Project>
-    <Privileged>false</Privileged>
-    <Networking>
-        <Mode>bridge</Mode>
-        <Publish>
-            <Port>
-                <HostPort>880</HostPort>
-                <ContainerPort>80</ContainerPort>
-                <Protocol>tcp</Protocol>
-            </Port>
-        </Publish>
-    </Networking>
-    <Config Name="Host Port 1" Target="880" Default="880" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">880</Config>
-    <WebUI>http://[IP]:[PORT:880]/</WebUI>
-    <DonateText></DonateText>
-    <DonateLink></DonateLink>
+    <Date>2019-08-30</Date>
+    <Description>LDAP Account Manager (LAM) is a webfrontend for managing entries (e.g. users, groups, DHCP settings) stored in an LDAP directory. LAM was designed to make LDAP management as easy as possible for the user. It abstracts from the technical details of LDAP and allows persons without technical background to manage LDAP entries. If needed, power users may still directly edit LDAP entries via the integrated LDAP browser</Description>
     <DonateImg></DonateImg>
+    <DonateLink></DonateLink>
+    <DonateText></DonateText>
+    <GitHub>https://github.com/LDAPAccountManager/lam</GitHub>
+    <Project>https://www.ldap-account-manager.org</Project>
+    <Support>https://hub.docker.com/r/ldapaccountmanager/lam</Support>
+    <TemplateURL>https://github.com/chessmaster42/docker-templates/blob/master/ldap-account-manager.xml</TemplateURL>
+
+    <Name>ldap-account-manager</Name>
+    <Overview>LDAP Account Manager (LAM) is a webfrontend for managing entries (e.g. users, groups, DHCP settings) stored in an LDAP directory. LAM was designed to make LDAP management as easy as possible for the user.</Overview>
+    <Repository>ldapaccountmanager/lam</Repository>
+    <Registry>https://hub.docker.com/r/ldapaccountmanager/lam/~/dockerfile/</Registry>
+    <Icon>https://raw.githubusercontent.com/chessmaster42/docker-templates/master/img/ldap-account-manager.jpg</Icon>
+    <WebUI>http://[IP]:[PORT:880]/</WebUI>
     <ExtraParams></ExtraParams>
-</Containers>
+    <PostArgs></PostArgs>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Config Type="Port" Name="WebUI HTTP Port" Target="80" Default="880" Mode="tcp" Description="Container Port: 80" Display="advanced" Required="true" Mask="false"></Config>
+</Container>

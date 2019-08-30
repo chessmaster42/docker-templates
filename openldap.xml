@@ -1,181 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Containers>
-    <TemplateURL>https://github.com/chessmaster42/docker-templates/blob/master/openldap.xml</TemplateURL>
-    <Icon>https://raw.githubusercontent.com/chessmaster42/docker-templates/master/img/openldap.jpg</Icon>
+<Container version="2">
     <Beta>False</Beta>
     <Category>Network:Other</Category>
-    <Name>openldap</Name>
-    <Description> A docker image to run OpenLDAP, The container default log level is info. Available levels are: none, error, warning, info, debug and trace</Description>
-    <Overview> A docker image to run OpenLDAP, The container default log level is info. Available levels are: none, error, warning, info, debug and trace</Overview>
-    <Support>https://hub.docker.com/r/osixia/openldap/</Support>
-    <Registry>https://hub.docker.com/r/osixia/openldap/~/dockerfile/</Registry>
-    <GitHub>https://github.com/osixia/docker-openldap</GitHub>
-    <Repository>osixia/openldap</Repository>
-    <Project>https://www.openldap.org/</Project>
-    <Privileged>false</Privileged>
-    <PostArgs>--loglevel info</PostArgs>
-    <Networking>
-        <Mode>bridge</Mode>
-        <Publish>
-            <Port>
-                <HostPort>389</HostPort>
-                <ContainerPort>389</ContainerPort>
-                <Protocol>tcp</Protocol>
-            </Port>
-            <Port>
-                <HostPort>636</HostPort>
-                <ContainerPort>636</ContainerPort>
-                <Protocol>tcp</Protocol>
-            </Port>
-        </Publish>
-    </Networking>
-    <Environment>
-        <Variable>
-            <Value/>
-            <Name>LDAP_ORGANISATION</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value/>
-            <Name>LDAP_DOMAIN</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value/>
-            <Name>LDAP_BASE_DN</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value/>
-            <Name>LDAP_ADMIN_PASSWORD</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value/>
-            <Name>LDAP_CONFIG_PASSWORD</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>false</Value>
-            <Name>LDAP_READONLY_USER</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value/>
-            <Name>LDAP_READONLY_USER_USERNAME</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value/>
-            <Name>LDAP_READONLY_USER_PASSWORD</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>false</Value>
-            <Name>LDAP_RFC2307BIS_SCHEMA</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>mdb</Value>
-            <Name>LDAP_BACKEND</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>true</Value>
-            <Name>LDAP_TLS</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>ldap.crt</Value>
-            <Name>LDAP_TLS_CRT_FILENAME</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>ldap.key</Value>
-            <Name>LDAP_TLS_KEY_FILENAME</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>ca.crt</Value>
-            <Name>LDAP_TLS_CA_CRT_FILENAME</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>false</Value>
-            <Name>LDAP_TLS_ENFORCE</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>SECURE256:+SECURE128:-VERS-TLS-ALL:+VERS-TLS1.2:-RSA:-DHE-DSS:-CAMELLIA-128-CBC:-CAMELLIA-256-CBC</Value>
-            <Name>LDAP_TLS_CIPHER_SUITE</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>demand</Value>
-            <Name>LDAP_TLS_VERIFY_CLIENT</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>false</Value>
-            <Name>KEEP_EXISTING_CONFIG</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>true</Value>
-            <Name>LDAP_REMOVE_CONFIG_AFTER_SETUP</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value>ldap</Value>
-            <Name>LDAP_SSL_HELPER_PREFIX</Name>
-            <Mode/>
-        </Variable>
-        <Variable>
-            <Value/>
-            <Name>HOSTNAME</Name>
-            <Mode/>
-        </Variable>
-    </Environment>
-    <Data>
-        <Volume>
-            <HostDir>/mnt/user/appdata/openldap/db/</HostDir>
-            <ContainerDir>/var/lib/ldap/</ContainerDir>
-            <Mode>rw</Mode>
-        </Volume>
-        <Volume>
-            <HostDir>/mnt/user/appdata/openldap/config/</HostDir>
-            <ContainerDir>/etc/ldap/slapd.d/</ContainerDir>
-            <Mode>rw</Mode>
-        </Volume>
-    </Data>
-    <Config Name="LDAP database files" Target="/var/lib/ldap/" Default="" Mode="rw" Description="LDAP database files" Type="Path" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP config files" Target="/etc/ldap/slapd.d/" Default="" Mode="rw" Description="LDAP config files" Type="Path" Display="always" Required="false" Mask="false"/>
-    <Config Name="Host Port 1" Target="389" Default="" Mode="tcp" Description="Container Port: 389" Type="Port" Display="always" Required="false" Mask="false"/>
-    <Config Name="Host Port 2" Target="636" Default="" Mode="tcp" Description="Container Port: 636" Type="Port" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_ORGANISATION" Target="LDAP_ORGANISATION" Default="" Mode="" Description="Organisation name. Defaults to Example Inc." Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_DOMAIN" Target="LDAP_DOMAIN" Default="" Mode="" Description="Ldap domain. Defaults to example.org" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_BASE_DN" Target="LDAP_BASE_DN" Default="" Mode="" Description="LDAP_BASE_DN: Ldap base DN. If empty automatically set from LDAP_DOMAIN value. Defaults to (empty)&#13;&#10;" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_ADMIN_PASSWORD" Target="LDAP_ADMIN_PASSWORD" Default="" Mode="" Description="Ldap Admin password. Defaults to admin" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_CONFIG_PASSWORD" Target="LDAP_CONFIG_PASSWORD" Default="" Mode="" Description="Ldap Config password. Defaults to config" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_READONLY_USER" Target="LDAP_READONLY_USER" Default="" Mode="" Description="Add a read only user. Defaults to false" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_READONLY_USER_USERNAME" Target="LDAP_READONLY_USER_USERNAME" Default="" Mode="" Description="Read only user username. Defaults to readonly" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_READONLY_USER_PASSWORD" Target="LDAP_READONLY_USER_PASSWORD" Default="" Mode="" Description="Read only user password. Defaults to readonly" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_RFC2307BIS_SCHEMA" Target="LDAP_RFC2307BIS_SCHEMA" Default="" Mode="" Description="Use rfc2307bis schema instead of nis schema. Defaults to false" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_BACKEND" Target="LDAP_BACKEND" Default="" Mode="" Description="Ldap backend. Defaults to mdb (previously hdb in image versions up to v1.1.10)" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_TLS" Target="LDAP_TLS" Default="" Mode="" Description="Add openldap TLS capabilities. Can't be removed once set to true. Defaults to true." Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_TLS_CRT_FILENAME" Target="LDAP_TLS_CRT_FILENAME" Default="" Mode="" Description="Ldap ssl certificate filename. Defaults to ldap.crt" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_TLS_KEY_FILENAME" Target="LDAP_TLS_KEY_FILENAME" Default="" Mode="" Description="Ldap ssl certificate private key filename. Defaults to ldap.key" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_TLS_CA_CRT_FILENAME" Target="LDAP_TLS_CA_CRT_FILENAME" Default="" Mode="" Description="Ldap ssl CA certificate filename. Defaults to ca.crt" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_TLS_ENFORCE" Target="LDAP_TLS_ENFORCE" Default="" Mode="" Description="Enforce TLS but except ldapi connections. Can't be disabled once set to true. Defaults to false." Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_TLS_CIPHER_SUITE" Target="LDAP_TLS_CIPHER_SUITE" Default="" Mode="" Description="TLS cipher suite. Defaults to SECURE256:+SECURE128:-VERS-TLS-ALL:+VERS-TLS1.2:-RSA:-DHE-DSS:-CAMELLIA-128-CBC:-CAMELLIA-256-CBC" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_TLS_VERIFY_CLIENT" Target="LDAP_TLS_VERIFY_CLIENT" Default="" Mode="" Description="TLS verify client. Defaults to demand" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="KEEP_EXISTING_CONFIG" Target="KEEP_EXISTING_CONFIG" Default="" Mode="" Description="Do not change the ldap config. Defaults to false&#13;&#10;&#13;&#10;    if set to true with an existing database, config will remain unchanged. Image tls and replication config will not be run. The container can be started with LDAP_ADMIN_PASSWORD and LDAP_CONFIG_PASSWORD empty or filled with fake data.&#13;&#10;    if set to true when bootstrapping a new database, bootstap ldif and schema will not be added and tls and replication config will not be run.&#13;&#10;" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_REMOVE_CONFIG_AFTER_SETUP" Target="LDAP_REMOVE_CONFIG_AFTER_SETUP" Default="" Mode="" Description="Container Variable: LDAP_REMOVE_CONFIG_AFTER_SETUP" Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="LDAP_SSL_HELPER_PREFIX" Target="LDAP_SSL_HELPER_PREFIX" Default="" Mode="" Description="ssl-helper environment variables prefix. Defaults to ldap, ssl-helper first search config from LDAP_SSL_HELPER_* variables, before SSL_HELPER_* variables." Type="Variable" Display="always" Required="false" Mask="false"/>
-    <Config Name="HOSTNAME" Target="HOSTNAME" Default="" Mode="" Description="Set the hostname of the running openldap server. Defaults to whatever docker creates." Type="Variable" Display="always" Required="false" Mask="false"/>
-    <WebUI></WebUI>
-    <DonateText></DonateText>
-    <DonateLink></DonateLink>
+    <Date>2019-08-30</Date>
+    <Description>A docker image to run OpenLDAP. The container default log level is info. Available levels are: none, error, warning, info, debug and trace</Description>
     <DonateImg></DonateImg>
+    <DonateLink></DonateLink>
+    <DonateText></DonateText>
+    <GitHub>https://github.com/osixia/docker-openldap</GitHub>
+    <Project>https://www.openldap.org/</Project>
+    <Support>https://hub.docker.com/r/osixia/openldap/</Support>
+    <TemplateURL>https://github.com/chessmaster42/docker-templates/blob/master/openldap.xml</TemplateURL>
+    
+    <Name>openldap</Name>
+    <Overview>A docker image to run OpenLDAP.</Overview>
+    <Repository>osixia/openldap</Repository>
+    <Registry>https://hub.docker.com/r/osixia/openldap/~/dockerfile/</Registry>
+    <Icon>https://raw.githubusercontent.com/chessmaster42/docker-templates/master/img/openldap.jpg</Icon>
+    <WebUI></WebUI>
     <ExtraParams></ExtraParams>
+    <Network>bridge</Network>
+    <PostArgs>--loglevel info</PostArgs>
+    <Privileged>false</Privileged>
+    <Config Type="Path" Name="LDAP database files" Target="/var/lib/ldap/" Default="/mnt/usr/appdata/openldap/" Mode="rw" Description="LDAP database files" Display="always" Required="true" Mask="false"></Config>
+    <Config Type="Path" Name="LDAP config files" Target="/etc/ldap/slapd.d/" Default="/mnt/usr/appdata/openldap/" Mode="rw" Description="LDAP config files" Display="always" Required="true" Mask="false"></Config>
+    <Config Type="Port" Name="Host Port 1" Target="389" Default="389" Mode="tcp" Description="Container Port: 389" Display="always" Required="true" Mask="false"></Config>
+    <Config Type="Port" Name="Host Port 2" Target="636" Default="636" Mode="tcp" Description="Container Port: 636" Display="always" Required="true" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_ORGANISATION" Target="LDAP_ORGANISATION" Default="" Mode="" Description="Organisation name. Defaults to Example Inc." Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_DOMAIN" Target="LDAP_DOMAIN" Default="" Mode="" Description="Ldap domain. Defaults to example.org" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_BASE_DN" Target="LDAP_BASE_DN" Default="" Mode="" Description="LDAP_BASE_DN: Ldap base DN. If empty automatically set from LDAP_DOMAIN value. Defaults to (empty)&#13;&#10;" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_ADMIN_PASSWORD" Target="LDAP_ADMIN_PASSWORD" Default="" Mode="" Description="Ldap Admin password. Defaults to admin" Display="always" Required="false" Mask="true"></Config>
+    <Config Type="Variable" Name="LDAP_CONFIG_PASSWORD" Target="LDAP_CONFIG_PASSWORD" Default="" Mode="" Description="Ldap Config password. Defaults to config" Display="always" Required="false" Mask="true"></Config>
+    <Config Type="Variable" Name="LDAP_READONLY_USER" Target="LDAP_READONLY_USER" Default="" Mode="" Description="Add a read only user. Defaults to false" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_READONLY_USER_USERNAME" Target="LDAP_READONLY_USER_USERNAME" Default="" Mode="" Description="Read only user username. Defaults to readonly" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_READONLY_USER_PASSWORD" Target="LDAP_READONLY_USER_PASSWORD" Default="" Mode="" Description="Read only user password. Defaults to readonly" Display="always" Required="false" Mask="true"></Config>
+    <Config Type="Variable" Name="LDAP_RFC2307BIS_SCHEMA" Target="LDAP_RFC2307BIS_SCHEMA" Default="false" Mode="" Description="Use rfc2307bis schema instead of nis schema. Defaults to false" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_BACKEND" Target="LDAP_BACKEND" Default="mdb" Mode="" Description="Ldap backend. Defaults to mdb (previously hdb in image versions up to v1.1.10)" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_TLS" Target="LDAP_TLS" Default="true" Mode="" Description="Add openldap TLS capabilities. Can't be removed once set to true. Defaults to true." Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_TLS_CRT_FILENAME" Target="LDAP_TLS_CRT_FILENAME" Default="ldap.crt" Mode="" Description="Ldap ssl certificate filename. Defaults to ldap.crt" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_TLS_KEY_FILENAME" Target="LDAP_TLS_KEY_FILENAME" Default="ldap.key" Mode="" Description="Ldap ssl certificate dh param file. Defaults to dhparam.pem" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_TLS_DH_PARAM_FILENAME" Target="LDAP_TLS_DH_PARAM_FILENAME" Default="dhparam.pem" Mode="" Description="Ldap ssl CA certificate filename. Defaults to ca.crt" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_TLS_CA_CRT_FILENAME" Target="LDAP_TLS_CA_CRT_FILENAME" Default="ca.crt" Mode="" Description="Ldap ssl CA certificate filename. Defaults to ca.crt" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_TLS_ENFORCE" Target="LDAP_TLS_ENFORCE" Default="false" Mode="" Description="Enforce TLS but except ldapi connections. Can't be disabled once set to true. Defaults to false." Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_TLS_CIPHER_SUITE" Target="LDAP_TLS_CIPHER_SUITE" Default="SECURE256:+SECURE128:-VERS-TLS-ALL:+VERS-TLS1.2:-RSA:-DHE-DSS:-CAMELLIA-128-CBC:-CAMELLIA-256-CBC" Mode="" Description="TLS cipher suite. Defaults to SECURE256:+SECURE128:-VERS-TLS-ALL:+VERS-TLS1.2:-RSA:-DHE-DSS:-CAMELLIA-128-CBC:-CAMELLIA-256-CBC" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_TLS_VERIFY_CLIENT" Target="LDAP_TLS_VERIFY_CLIENT" Default="demand" Mode="" Description="TLS verify client. Defaults to demand" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_REPLICATION" Target="LDAP_REPLICATION" Default="false" Mode="" Description="Add openldap replication capabilities. Defaults to false" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_REPLICATION_CONFIG_SYNCPROV" Target="LDAP_REPLICATION_CONFIG_SYNCPROV" Default="binddn=&#34;cn=admin,cn=config&#34; bindmethod=simple credentials=$LDAP_CONFIG_PASSWORD searchbase=&#34;cn=config&#34; type=refreshAndPersist retry=&#34;60 +&#34; timeout=1 starttls=critical" Mode="" Description="olcSyncRepl options used for the config database. Without rid and provider which are automatically added based on LDAP_REPLICATION_HOSTS." Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_REPLICATION_DB_SYNCPROV" Target="LDAP_REPLICATION_DB_SYNCPROV" Default="binddn=&#34;cn=admin,$LDAP_BASE_DN&#34; bindmethod=simple credentials=$LDAP_ADMIN_PASSWORD searchbase=&#34;$LDAP_BASE_DN&#34; type=refreshAndPersist interval=00:00:00:10 retry=&#34;60 +&#34; timeout=1 starttls=critical" Mode="" Description="olcSyncRepl options used for the database. Without rid and provider which are automatically added based on LDAP_REPLICATION_HOSTS." Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_REPLICATION_HOSTS" Target="LDAP_REPLICATION_HOSTS" Default="#PYTHON2BASH:['ldap://ldap.example.org','ldap://ldap2.example.org']" Mode="" Description="List of replication hosts, must contain the current container hostname set by --hostname on docker run command." Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="KEEP_EXISTING_CONFIG" Target="KEEP_EXISTING_CONFIG" Default="false" Mode="" Description="Do not change the ldap config. Defaults to false&#13;&#10;&#13;&#10;    if set to true with an existing database, config will remain unchanged. Image tls and replication config will not be run. The container can be started with LDAP_ADMIN_PASSWORD and LDAP_CONFIG_PASSWORD empty or filled with fake data.&#13;&#10;    if set to true when bootstrapping a new database, bootstap ldif and schema will not be added and tls and replication config will not be run.&#13;&#10;" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_REMOVE_CONFIG_AFTER_SETUP" Target="LDAP_REMOVE_CONFIG_AFTER_SETUP" Default="true" Mode="" Description="Delete config folder after setup. Defaults to true" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_SSL_HELPER_PREFIX" Target="LDAP_SSL_HELPER_PREFIX" Default="ldap" Mode="" Description="ssl-helper environment variables prefix. Defaults to ldap, ssl-helper first search config from LDAP_SSL_HELPER_* variables, before SSL_HELPER_* variables." Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="HOSTNAME" Target="HOSTNAME" Default="" Mode="" Description="Set the hostname of the running openldap server. Defaults to whatever docker creates." Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="DISABLE_CHOWN" Target="DISABLE_CHOWN" Default="false" Mode="" Description="Do not perform any chown to fix file ownership. Defaults to false." Display="always" Required="false" Mask="false"></Config>
 </Containers>
