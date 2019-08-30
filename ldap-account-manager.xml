@@ -16,7 +16,7 @@
     <Overview>LDAP Account Manager (LAM) is a webfrontend for managing entries (e.g. users, groups, DHCP settings) stored in an LDAP directory. LAM was designed to make LDAP management as easy as possible for the user.</Overview>
     <Repository>ldapaccountmanager/lam</Repository>
     <Registry>https://hub.docker.com/r/ldapaccountmanager/lam/~/dockerfile/</Registry>
-    <Icon>https://raw.githubusercontent.com/chessmaster42/docker-templates/master/img/ldap-account-manager.jpg</Icon>
+    <Icon>https://raw.githubusercontent.com/chessmaster42/docker-templates/master/img/ldap-account-manager.png</Icon>
     <WebUI>http://[IP]:[PORT:880]/</WebUI>
     <ExtraParams></ExtraParams>
     <PostArgs></PostArgs>

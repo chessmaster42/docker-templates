@@ -22,8 +22,8 @@
     <Network>bridge</Network>
     <PostArgs>--loglevel info</PostArgs>
     <Privileged>false</Privileged>
-    <Config Type="Path" Name="LDAP database files" Target="/var/lib/ldap/" Default="/mnt/usr/appdata/openldap/" Mode="rw" Description="LDAP database files" Display="always" Required="true" Mask="false"></Config>
-    <Config Type="Path" Name="LDAP config files" Target="/etc/ldap/slapd.d/" Default="/mnt/usr/appdata/openldap/" Mode="rw" Description="LDAP config files" Display="always" Required="true" Mask="false"></Config>
+    <Config Type="Path" Name="LDAP database files" Target="/var/lib/ldap/" Default="/mnt/user/appdata/openldap/" Mode="rw" Description="LDAP database files" Display="always" Required="true" Mask="false"></Config>
+    <Config Type="Path" Name="LDAP config files" Target="/etc/ldap/slapd.d/" Default="/mnt/user/appdata/openldap/" Mode="rw" Description="LDAP config files" Display="always" Required="true" Mask="false"></Config>
     <Config Type="Port" Name="Host Port 1" Target="389" Default="389" Mode="tcp" Description="Container Port: 389" Display="always" Required="true" Mask="false"></Config>
     <Config Type="Port" Name="Host Port 2" Target="636" Default="636" Mode="tcp" Description="Container Port: 636" Display="always" Required="true" Mask="false"></Config>
     <Config Type="Variable" Name="LDAP_ORGANISATION" Target="LDAP_ORGANISATION" Default="" Mode="" Description="Organisation name. Defaults to Example Inc." Display="always" Required="false" Mask="false"></Config>

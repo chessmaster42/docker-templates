@@ -16,7 +16,7 @@
     <Overview>A PHP web-based interface for LDAP user account management and self-service password change.</Overview>
     <Repository>wheelybird/ldap-user-manager</Repository>
     <Registry>https://hub.docker.com/r/wheelybird/ldap-user-manager/~/dockerfile/</Registry>
-    <Icon>https://raw.githubusercontent.com/chessmaster42/docker-templates/master/img/ldap-user-manager.jpg</Icon>
+    <Icon>https://raw.githubusercontent.com/chessmaster42/docker-templates/master/img/default.png</Icon>
     <WebUI>http://[IP]:[PORT:2443]/</WebUI>
     <ExtraParams></ExtraParams>
     <PostArgs></PostArgs>

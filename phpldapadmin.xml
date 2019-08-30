@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <Beta>False</Beta>
+    <Category>Network:Other</Category>
+    <Date>2019-08-30</Date>
+    <Description>A docker image to run phpLDAPadmin</Description>
+    <DonateImg></DonateImg>
+    <DonateLink></DonateLink>
+    <DonateText></DonateText>
+    <GitHub>https://github.com/osixia/docker-phpLDAPadmin</GitHub>
+    <Project>http://phpldapadmin.sourceforge.net</Project>
+    <Support>https://hub.docker.com/r/osixia/phpldapadmin/</Support>
+    <TemplateURL>https://github.com/chessmaster42/docker-templates/blob/master/phpldapadmin.xml</TemplateURL>
+
+    <Name>phpldapadmin</Name>
+    <Overview>A docker image to run phpLDAPadmin</Overview>
+    <Repository>osixia/phpldapadmin</Repository>
+    <Registry>https://hub.docker.com/r/osixia/phpldapadmin/~/dockerfile/</Registry>
+    <Icon>https://raw.githubusercontent.com/chessmaster42/docker-templates/master/img/phpldapadmin.jpg</Icon>
+    <WebUI>http://[IP]:[PORT:4443]/</WebUI>
+    <ExtraParams></ExtraParams>
+    <PostArgs></PostArgs>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Config Type="Port" Name="WebUI HTTPS Port" Target="443" Default="4443" Mode="tcp" Description="Container Port: 443" Display="advanced" Required="true" Mask="false"></Config>
+    <Config Type="Variable" Name="PHPLDAPADMIN_LDAP_HOSTS" Target="PHPLDAPADMIN_LDAP_HOSTS" Default="ldap.example.org" Mode="" Description="Set phpLDAPadmin server config See here https://github.com/osixia/docker-phpLDAPadmin#environment-variables" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="PHPLDAPADMIN_SERVER_ADMIN" Target="PHPLDAPADMIN_SERVER_ADMIN" Default="webmaster@example.org" Mode="" Description="Server admin email. Defaults to webmaster@example.org" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="PHPLDAPADMIN_SERVER_PATH" Target="PHPLDAPADMIN_SERVER_PATH" Default="/phpldapadmin" Mode="" Description="Server path (usefull if behind a reverse proxy). Defaults to /phpldapadmin" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="PHPLDAPADMIN_HTTPS" Target="PHPLDAPADMIN_HTTPS" Default="true" Mode="" Description="Use apache ssl config. Defaults to true" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="PHPLDAPADMIN_HTTPS_CRT_FILENAME" Target="PHPLDAPADMIN_HTTPS_CRT_FILENAME" Default="phpldapadmin.crt" Mode="" Description="Apache ssl certificate filename. Defaults to phpldapadmin.crt" Display="always" Required="false" Mask="false"</Config>
+    <Config Type="Variable" Name="PHPLDAPADMIN_HTTPS_KEY_FILENAME" Target="PHPLDAPADMIN_HTTPS_KEY_FILENAME" Default="phpldapadmin.key" Mode="" Description="Apache ssl certificate private key filename. Defaults to phpldapadmin.key" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="PHPLDAPADMIN_HTTPS_CA_CRT_FILENAME" Target="PHPLDAPADMIN_HTTPS_CA_CRT_FILENAME" Default="ca.crt" Mode="" Description="Apache ssl CA certificate filename. Defaults to ca.crt" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="PHPLDAPADMIN_TRUST_PROXY_SSL" Target="PHPLDAPADMIN_TRUST_PROXY_SSL" Default="true" Mode="" Description="Set to true to trust X-Forwarded-Proto header" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="PHPLDAPADMIN_LDAP_CLIENT_TLS" Target="PHPLDAPADMIN_LDAP_CLIENT_TLS" Default="true" Mode="" Description="Enable ldap client tls config, ldap server certificate check and set client certificate. Defaults to true" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="PHPLDAPADMIN_LDAP_CLIENT_TLS_REQCERT" Target="PHPLDAPADMIN_LDAP_CLIENT_TLS_REQCERT" Default="demand" Mode="" Description="Set ldap.conf TLS_REQCERT. Defaults to demand" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="PHPLDAPADMIN_LDAP_CLIENT_TLS_CA_CRT_FILENAME" Target="PHPLDAPADMIN_LDAP_CLIENT_TLS_CA_CRT_FILENAME" Default="ldap-ca.crt" Mode="" Description="Set ldap.conf TLS_CACERT to /container/service/ldap-client/assets/certs/$PHPLDAPADMIN_LDAP_CLIENT_TLS_CA_CRT_FILENAME. Defaults to ldap-ca.crt" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="PHPLDAPADMIN_LDAP_CLIENT_TLS_CRT_FILENAME" Target="PHPLDAPADMIN_LDAP_CLIENT_TLS_CRT_FILENAME" Default="ldap-client.crt" Mode="" Description="Set .ldaprc TLS_CERT to /container/service/ldap-client/assets/certs/$PHPLDAPADMIN_LDAP_CLIENT_TLS_CRT_FILENAME. Defaults to ldap-client.crt" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="PHPLDAPADMIN_LDAP_CLIENT_TLS_KEY_FILENAME" Target="PHPLDAPADMIN_LDAP_CLIENT_TLS_KEY_FILENAME" Default="ldap-client.key" Mode="" Description="Set .ldaprc TLS_KEY to /container/service/ldap-client/assets/certs/$PHPLDAPADMIN_LDAP_CLIENT_TLS_KEY_FILENAME. Defaults to ldap-client.key" Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="PHPLDAPADMIN_SSL_HELPER_PREFIX" Target="PHPLDAPADMIN_SSL_HELPER_PREFIX" Default="phpldapadmin" Mode="" Description="ssl-helper environment variables prefix. Defaults to phpldapadmin, ssl-helper first search config from PHPLDAPADMIN_SSL_HELPER_* variables, before SSL_HELPER_* variables." Display="always" Required="false" Mask="false"></Config>
+    <Config Type="Variable" Name="LDAP_CLIENT_SSL_HELPER_PREFIX" Target="LDAP_CLIENT_SSL_HELPER_PREFIX" Default="ldap" Mode="" Description="ssl-helper environment variables prefix. Defaults to ldap, ssl-helper first search config from LDAP_SSL_HELPER_* variables, before SSL_HELPER_* variables." Display="always" Required="false" Mask="false"></Config>
+</Container>
