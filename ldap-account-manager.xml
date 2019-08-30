@@ -23,6 +23,7 @@
             </Port>
         </Publish>
     </Networking>
+    <Config Name="Host Port 1" Target="880" Description="Container Port: 80"/>
     <WebUI>http://[IP]:[PORT:880]/</WebUI>
     <DonateText></DonateText>
     <DonateLink></DonateLink>
