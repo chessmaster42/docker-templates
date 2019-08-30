@@ -23,7 +23,7 @@
             </Port>
         </Publish>
     </Networking>
-    <Config Name="Host Port 1" Target="880" Description="Container Port: 80"/>
+    <Config Name="Host Port 1" Target="80" Default="880" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false"/>
     <WebUI>http://[IP]:[PORT:880]/</WebUI>
     <DonateText></DonateText>
     <DonateLink></DonateLink>
